@@ -1,0 +1,44 @@
+<head>
+  <title>WittyMerc</title>
+
+</head>
+
+<body>
+  <hgroup>
+	<h3><a href="http://www.witworks.in" target="_blank"><img src="http://witworks.com/assets/img/main_logo.png"></a> </h3>
+	<p>Merchant App Example</p>
+  </hgroup>
+
+  <form id="readNfc">
+  	{{> readNfc}}
+  </form>
+  <form id="paymentPage" style="display:none;">
+  	{{> paymentPage}}
+  </form>
+
+
+  <footer>
+	<p><a href="http://www.witworks.in/" target="_blank">WitWorks</a></p>
+  </footer>
+
+</body>
+
+<template name="readNfc">
+	<button  type="button" class="button buttonBlue">Read Nfc
+		<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+	</button>
+</template>
+
+<template name="paymentPage">
+	<div class="group">
+	<input type="text" value="{{customer}}" disabled><span class="highlight"></span><span class="bar"></span>
+	<label>Customer Id</label>
+	</div>
+	<div class="group">
+		<input type="number" id="amount"><span class="highlight"></span><span class="bar"></span>
+		<label>Amount</label>
+	</div>
+	<button type="button" class="button buttonBlue">Pay
+	<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+	</button>
+</template>
