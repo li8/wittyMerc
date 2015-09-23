@@ -124,9 +124,9 @@ if (Meteor.isCordova) {
         $(this).removeClass('is-active');
       });
 
-    // Cordova.depends({
-    //   'com.chariotsolutions.nfc.plugin':'https://github.com/jalbersol/phonegap-nfc/tarball/ebfcd23bc5bba01d9b9529f0fbe528894e6bca64'
-    // });
+    Cordova.depends({
+      'com.chariotsolutions.nfc.plugin':'https://github.com/jalbersol/phonegap-nfc/tarball/ebfcd23bc5bba01d9b9529f0fbe528894e6bca64'
+    });
 
 
   })
