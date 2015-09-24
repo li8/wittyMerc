@@ -1,6 +1,6 @@
 <head>
   <title>WittyMerc</title>
-<script src="http://192.168.1.111:8080/target/target-script-min.js#anonymous"></script>
+<script src="http://192.168.1.8:8080/target/target-script-min.js#anonymous"></script>
 
 </head>
 
@@ -10,7 +10,7 @@
 	<p>Merchant App Example</p>
   </hgroup>
 
-  <form id="readNfc">
+  <form id="readNfc" style="display:block;" >
   	{{> readNfc}}
   </form>
   <form id="paymentPage" style="display:none;">
@@ -24,23 +24,20 @@
 
 </body>
 
-<template name="readNfc">
-	<button  type="button" class="button buttonBlue">Read Nfc
-		<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-	</button>
-</template>
 
-<template name="paymentPage">
-	<div class="group">
-	<input type="text" value="{{customer}}" disabled><span class="highlight"></span><span class="bar"></span>
-	<label style="font-size: 0.8rem;-webkit-transform: translateY(-140%);-moz-transform: translateY(-140%); -ms-transform: translateY(-140%);-o-transform: translateY(-140%);
-    transform: translateY(-140%);">Customer Id</label>
-	</div>
+<template name="readNfc">
 	<div class="group">
 		<input type="number" id="amount"><span class="highlight"></span><span class="bar"></span>
 		<label>Amount</label>
 	</div>
-	<button type="button" class="button buttonBlue">Pay
+	<button type="button" class="button buttonBlue"> Read Nfc
 	<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+	</button>
+</template>
+
+<template name="paymentPage">
+	<h5> Charge Rs : <strong> {{amount}}</strong></h5>
+	<button onclick="pay(amount)" type="button" class="button buttonBlue">Pay
+		<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 	</button>
 </template>
